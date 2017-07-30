@@ -46,8 +46,8 @@ module.exports.send = (event, context, callback) => {
   //TODO: create SMS subscriber
   var TopicArn = 'arn:aws:sns:us-east-1:137173381341:sms-test';
 
-  for (index = 0; index < event.numbers.length; ++index) {
-    target = event.numbers[index];
+  for (var index = 0; index < event.numbers.length; ++index) {
+    var target = event.numbers[index];
     try {
       console.log(target);
       //TODO: check phone format

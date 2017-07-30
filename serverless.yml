@@ -26,4 +26,4 @@ functions:
     events:
       - http:
          path: send
-         method: get # post later
+         method: post
