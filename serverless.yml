@@ -5,7 +5,7 @@
 # uses to deploy your code to your provider of choice
 
 # The `service` block is the name of the service
-service: serverless-hello-world
+service: msgblast-api
 
 # The `provider` block defines where your service will be deployed
 provider:
@@ -14,11 +14,16 @@ provider:
 
 # The `functions` block defines what code to deploy
 functions:
-  helloWorld:
-    handler: handler.helloWorld
-    # The `events` block defines how to trigger the handler.helloWorld code
+  ping:
+    handler: handler.ping
+    # The `events` block defines how to trigger the handler.ping code
     events:
        - http:
-          path: message
+          path: /
           method: get
-          cors: true
+  send:
+    handler: handler.send
+    events:
+      - http:
+         path: send
+         method: get # post later
