@@ -34,6 +34,14 @@ module.exports.send = (event, context, callback) => {
 
   console.log(" --- Events received ----");
   console.log(event);
+  
+  console.log(" --- BODY received ----");
+  console.log(event.body);
+  
+  console.log(" --- PARSED event ----");
+  event = JSON.parse(event.body);
+  console.log(event);
+  
   if (!event.message) {
     console.log('Cancelled - empty message');
     return;
